@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 
 public class BookManagementForm extends JFrame {
     public static void main(String[] args) {
-        // Initialize the form and set it visible
+        
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
