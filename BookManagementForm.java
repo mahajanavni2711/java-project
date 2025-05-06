@@ -101,7 +101,7 @@ public class BookManagementForm extends JFrame {
             stmt.setString(2, author);
             stmt.setInt(3, year);
             stmt.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Book Added Successfully!");  // alert
+            JOptionPane.showMessageDialog(this, "Book Added Successfully!");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -112,7 +112,7 @@ public class BookManagementForm extends JFrame {
                 JOptionPane.QUESTION_MESSAGE);
 
         if (idInput == null || idInput.trim().isEmpty()) {
-            return; // If the user cancels or leaves the input empty, do nothing
+            return; 
         }
 
         try {
@@ -148,16 +148,15 @@ public class BookManagementForm extends JFrame {
         }
     }
     private void deleteBook() {
-        // Prompt the user to enter the ID
         String idInput = JOptionPane.showInputDialog(this, "Enter Book ID:", "Delete Book",
                 JOptionPane.QUESTION_MESSAGE);
 
         if (idInput == null || idInput.trim().isEmpty()) {
-            return; // If the user cancels or leaves the input empty, do nothing
+            return; 
         }
 
         try {
-            int id = Integer.parseInt(idInput); // Parse the ID
+            int id = Integer.parseInt(idInput); 
 
             try (Connection conn = DatabaseConnection.getConnection()) {
                 String deleteSql = "DELETE FROM books WHERE id = ?";
@@ -185,7 +184,7 @@ public class BookManagementForm extends JFrame {
 
      private void viewBooks() {
         try (Connection conn = DatabaseConnection.getConnection()) {
-            String sql = "SELECT * FROM books";  // fetch all books
+            String sql = "SELECT * FROM books"; 
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
 
