@@ -8,7 +8,7 @@ public class DatabaseConnection {
     public static Connection getConnection() throws SQLException {
 
         try {
-            Class.forName("org.sqlite.JDBC");  // ✅ Required for loading the driver
+            Class.forName("org.sqlite.JDBC");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             throw new SQLException("SQLite JDBC Driver not found!");
