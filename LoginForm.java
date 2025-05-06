@@ -50,11 +50,11 @@ public class LoginForm extends JFrame {
                     PreparedStatement stmt = conn.prepareStatement(sql);
                     stmt.setString(1, username);
                     stmt.setString(2, password);
-                    ResultSet rs = stmt.executeQuery();  // result will come here
+                    ResultSet rs = stmt.executeQuery();
 
                     if (rs.next()) {
                         JOptionPane.showMessageDialog(LoginForm.this, "Login Successful!");
-                        new BookManagementForm().setVisible(true);   // todo
+                        new BookManagementForm().setVisible(true); 
                         dispose();
                     } else {
                         JOptionPane.showMessageDialog(LoginForm.this, "Invalid Credentials!");
