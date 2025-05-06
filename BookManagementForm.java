@@ -46,7 +46,6 @@ public class BookManagementForm extends JFrame {
         deleteButton = new JButton("Delete Book");
         viewButton = new JButton("View Books");
 
-        // add these elements in the panel
         panel.add(new JLabel("Title:"));
         panel.add(titleField);
         panel.add(new JLabel("Author:"));
@@ -58,7 +57,7 @@ public class BookManagementForm extends JFrame {
         panel.add(deleteButton);
         panel.add(viewButton);
 
-        // make events here -- lets call these methods now on the basis of events
+
         addButton.addActionListener((ActionListener) new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,8 +89,6 @@ public class BookManagementForm extends JFrame {
         add(panel);
 
     }
-
-    //  Add book
     private void addBook() {
         String title = titleField.getText();
         String author = authorField.getText();
@@ -110,10 +107,7 @@ public class BookManagementForm extends JFrame {
         }
     }
 
-
-    // update
     private void updateBook() {
-        // Prompt the user to enter the ID
         String idInput = JOptionPane.showInputDialog(this, "Enter Book ID:", "Update Book",
                 JOptionPane.QUESTION_MESSAGE);
 
@@ -153,8 +147,6 @@ public class BookManagementForm extends JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
     }
-
-    // delete
     private void deleteBook() {
         // Prompt the user to enter the ID
         String idInput = JOptionPane.showInputDialog(this, "Enter Book ID:", "Delete Book",
@@ -190,7 +182,6 @@ public class BookManagementForm extends JFrame {
         }
     }
 
-    // view 
 
      private void viewBooks() {
         try (Connection conn = DatabaseConnection.getConnection()) {
