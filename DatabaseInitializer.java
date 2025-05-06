@@ -1,4 +1,3 @@
- // let's create the Database Structure and some seed data 
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +18,6 @@ public class DatabaseInitializer {
             if (conn != null) {
                 System.out.println("Database created or connected successfully!");
 
-                // Create users table
                 String createUsersTable = "CREATE TABLE IF NOT EXISTS users (" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "username TEXT NOT NULL UNIQUE, " +
@@ -27,12 +25,10 @@ public class DatabaseInitializer {
                 stmt.execute(createUsersTable);
                 System.out.println("Users table created successfully!");
 
-                // Insert dummy user
                 String insertUser = "INSERT INTO users (username, password) VALUES ('admin', 'admin123');";
                 stmt.execute(insertUser);
                 System.out.println("Dummy user inserted successfully!");
 
-                // Create books table
                 String createBooksTable = "CREATE TABLE IF NOT EXISTS books (" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "title TEXT NOT NULL, " +
@@ -41,7 +37,6 @@ public class DatabaseInitializer {
                 stmt.execute(createBooksTable);
                 System.out.println("Books table created successfully!");
 
-                // Insert dummy books
                 String insertBook1 = "INSERT INTO books (title, author, year) VALUES ('The Great Gatsby', 'F. Scott Fitzgerald', 1925);";
                 String insertBook2 = "INSERT INTO books (title, author, year) VALUES ('1984', 'George Orwell', 1949);";
                 String insertBook3 = "INSERT INTO books (title, author, year) VALUES ('To Kill a Mockingbird', 'Harper Lee', 1960);";
